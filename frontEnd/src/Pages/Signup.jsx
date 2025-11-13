@@ -12,12 +12,14 @@ import { signInWithPopup } from 'firebase/auth';
 import { auth, provider } from '../Utils/Firebase';
 function Signup() {
     let navigate = useNavigate()
+
   let [show, setShow] = useState(false)
  let {serverUrl} = useContext(authDataContext)
   let [name, setName] = useState("")
   let [email, setEmail] = useState("")
   let [password, setPassword] = useState("")
     const dispatch = useDispatch()
+
   const handleSignUp = async (e)=>{
     e.preventDefault();
     try {
@@ -72,7 +74,7 @@ function Signup() {
   </div>
 
   {/* Form Container */}
-  <div className="max-w-[500px] w-[90%] h-[400px] border border-blue-300/30 bg-blue-900/20 backdrop-blur-2xl rounded-lg shadow-lg flex items-center justify-center">
+  <div className="max-w-[500px] w-[90%] h-[500px] border border-blue-300/30 bg-blue-900/20 backdrop-blur-2xl rounded-lg shadow-lg flex items-center justify-center mb-10">
     <form
       action=""
       className="w-[90%] h-[90%] flex flex-col items-center justify-center gap-[20px]"
@@ -122,13 +124,13 @@ function Signup() {
 
         {!show && (
           <FaEye
-            className="w-[20px] h-[20px] absolute right-[5%] top-[30%] text-blue-300 cursor-pointer"
+            className="w-[20px] h-[20px] absolute right-[5%] top-[50%] text-blue-300 cursor-pointer"
             onClick={() => setShow((prev) => !prev)}
           />
         )}
         {show && (
           <FaEyeSlash
-            className="w-[20px] h-[20px] absolute right-[5%] top-[30%] text-blue-300 cursor-pointer"
+            className="w-[20px] h-[20px] absolute right-[5%] top-[50%] text-blue-300 cursor-pointer"
             onClick={() => setShow((prev) => !prev)}
           />
         )}
